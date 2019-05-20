@@ -88,9 +88,3 @@ let fetchData = fetch('https://jsonplaceholder.typicode.com/users').then((res) =
 }).then((rej) =>{
     console.log(rej)
 })
-
-Promise.all([fetchData]).then((val) => {
-    console.log(val);
-}).catch((rej)=>{
-    console.log(rej)
-})
