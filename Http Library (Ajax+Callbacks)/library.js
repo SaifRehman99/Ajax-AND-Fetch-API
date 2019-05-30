@@ -3,8 +3,8 @@ function library() {
 }
 
 
-// GET Request
 
+// GET Request
 library.prototype.get = function (url, callback) {
 
     this.http.open('GET', url, true);
@@ -23,8 +23,10 @@ library.prototype.get = function (url, callback) {
 }
 
 
-// POST Request
 
+
+
+// POST Request
 library.prototype.post = function (url, data, callback) {
 
     this.http.open('POST', url, true);
@@ -38,8 +40,11 @@ library.prototype.post = function (url, data, callback) {
 
     this.http.send(JSON.stringify(data));
 }
-// PUT Request
 
+
+
+
+// PUT Request
 library.prototype.put = function (url, data, callback) {
 
     this.http.open('PUT', url, true);
@@ -53,4 +58,24 @@ library.prototype.put = function (url, data, callback) {
     this.http.send(JSON.stringify(data));
 }
 
+
+
+
+
 // DELETE Request
+library.prototype.delete = function (url, callback) {
+
+    this.http.open('DELETE', url, true);
+
+    this.http.onload = () => {
+        if (this.http.status === 200) {
+            callback(null, this.http.responseText)
+        }
+        else {
+            callback(`Error : ${this.http.status}`)
+        }
+    }
+
+
+    this.http.send();
+}
