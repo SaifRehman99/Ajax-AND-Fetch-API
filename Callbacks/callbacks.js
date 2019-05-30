@@ -7,6 +7,25 @@ these type of function are called HIGH ORDER FUNCTION.
 JavaScript is an event driven language means it doesnt wait for the response, it keep executing
 */
 
+
+function printString(string, callback){
+    setTimeout(
+      () => {
+        console.log(string)
+        callback()
+      }, 
+      Math.floor(Math.random() * 100) + 1
+    )
+  }
+
+  function printAll(){
+    printString("A", () => {
+      printString("B", () => {
+        printString("C", () => {})
+      })
+    })
+  }
+  printAll()
 // EXAMPLE#1
 let first = () => {
     console.log(1)
