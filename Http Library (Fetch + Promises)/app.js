@@ -10,7 +10,7 @@ lib.get('https://jsonplaceholder.typicode.com/users')
 
 
 // Creating Data here
-let data = {
+const data = {
     name: 'Saif Rehman',
     email: 'saifr9732@gmail.com',
 }
@@ -24,4 +24,12 @@ lib.post('https://jsonplaceholder.typicode.com/users', data)
 
 
 // PUT HERE
+lib.put('https://jsonplaceholder.typicode.com/users/2', data)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+
+
 // DELETE HERE
+lib.delete('https://jsonplaceholder.typicode.com/users/2', data)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
