@@ -45,10 +45,10 @@ const updatingArray = (data) => {
         }, 2000);
 
         let err = false;
-        if(!err){
+        if (!err) {
             res();
         }
-        else{
+        else {
             rej('Error');
         }
 
@@ -57,19 +57,26 @@ const updatingArray = (data) => {
 }
 console.log(person)
 
-async function dataFetching () {
+async function dataFetching() {
 
-    await updatingArray({name:'Ali' , age:19});
+    await updatingArray({ name: 'Ali', age: 19 });
     printingArray()
 }
 dataFetching()
 
 // fetching the api data using async await
-async function fetchData  (){
+async function fetchData() {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await res.json();
-    console.log(data) 
+    console.log(data)
 
 }
 
 fetchData()
+
+async function printAll(){
+    await printString("A")
+    await printString("B")
+    await printString("C")
+  }
+  printAll()
