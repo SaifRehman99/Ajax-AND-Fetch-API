@@ -29,33 +29,33 @@ class http {
 
 
     // PUT HERE
-   async put(url, data) {
+    async put(url, data) {
         const resp2 = await fetch(url, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
 
-            const data2 = await resp2.json();
+        const data2 = await resp2.json();
 
-            return data2;
-          
+        return data2;
+
     }
 
     // DELETE HERE
     async delete(url) {
-        
+
         const resp3 = await fetch(url, {
-                method: 'DELETE',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-            });
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            },
+        });
 
-            const data3 = await 'Deleted..!';
+        const data3 = await 'Deleted..!';
 
-            return data3
+        return data3
     }
 }

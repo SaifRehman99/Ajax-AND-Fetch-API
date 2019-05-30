@@ -33,4 +33,3 @@ lib.put('https://jsonplaceholder.typicode.com/users/2', data)
 lib.delete('https://jsonplaceholder.typicode.com/users/2', data)
     .then(res => console.log(res))
     .catch(err => console.log(err));
-    
