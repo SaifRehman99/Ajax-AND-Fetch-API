@@ -29,7 +29,7 @@ http.post('https://jsonplaceholder.typicode.com/posts', data, (err, res) => {
 })
 
 // PUT Data
-http.put('https://jsonplaceholder.typicode.com/posts/1',data,(err,res)=> {
+http.put('https://jsonplaceholder.typicode.com/posts/1', data, (err, res) => {
     if (err) {
         console.log(err);
     }
@@ -42,7 +42,7 @@ http.put('https://jsonplaceholder.typicode.com/posts/1',data,(err,res)=> {
 // DELETE Data
 http.delete('https://jsonplaceholder.typicode.com/posts/1', (err, res) => {
     if (err) {
-        console.log(err) ;
+        console.log(err);
     }
     else {
         console.log(res + 'POST DELETED');
