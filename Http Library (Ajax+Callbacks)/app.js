@@ -1,5 +1,8 @@
 const http = new library;
 
 // Get post
-const posts = http.get('https://jsonplaceholder.typicode.com/posts');
-console.log(posts)
+http.get('https://jsonplaceholder.typicode.com/posts',(res)=>{
+    console.log(res);
+});
+
+console.log('posts');

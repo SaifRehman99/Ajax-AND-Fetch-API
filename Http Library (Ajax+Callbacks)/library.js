@@ -5,13 +5,13 @@ function library() {
 
 // GET Request
 
-library.prototype.get = function(url)  {
+library.prototype.get = function (url, callback) {
 
-    this.http.open('GET',url,true);
+    this.http.open('GET', url, true);
 
     this.http.onload = () => {
-        if(this.http.status === 200){
-            return this.http.responseText;
+        if (this.http.status === 200) {
+            callback(this.http.responseText)
         }
     }
 
