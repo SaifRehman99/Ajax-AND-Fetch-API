@@ -74,9 +74,9 @@ async function fetchData() {
 
 fetchData()
 
-async function printAll(){
+async function printAll() {
     await printString("A")
     await printString("B")
     await printString("C")
-  }
-  printAll()
+}
+printAll()

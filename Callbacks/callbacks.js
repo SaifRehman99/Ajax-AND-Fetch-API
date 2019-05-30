@@ -8,24 +8,24 @@ JavaScript is an event driven language means it doesnt wait for the response, it
 */
 
 
-function printString(string, callback){
+function printString(string, callback) {
     setTimeout(
-      () => {
-        console.log(string)
-        callback()
-      }, 
-      Math.floor(Math.random() * 100) + 1
+        () => {
+            console.log(string)
+            callback()
+        },
+        Math.floor(Math.random() * 100) + 1
     )
-  }
+}
 
-  function printAll(){
+function printAll() {
     printString("A", () => {
-      printString("B", () => {
-        printString("C", () => {})
-      })
+        printString("B", () => {
+            printString("C", () => { })
+        })
     })
-  }
-  printAll()
+}
+printAll()
 // EXAMPLE#1
 let first = () => {
     console.log(1)

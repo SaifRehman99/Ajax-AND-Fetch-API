@@ -57,7 +57,7 @@ class http {
                 },
             })
                 .then(res => res.json())
-                .then(data => resolve("Data Deleted"))
+                .then(() => resolve("Data Deleted"))
                 .catch(err => reject(err));
 
         })
