@@ -61,16 +61,16 @@ const printingArray = () => {
 
 const updatingArray = (data) => {
     return new Promise((res, rej) => {
-        setTimeout(() => {
-            // first push the data
-            person.push(data);
-        }, 2000);
+        // setTimeout(() => {
+        // first push the data
+        person.push(data);
+        // }, 2000);
 
         let err = false;
-        if(!err){
+        if (!err) {
             res();
         }
-        else{
+        else {
             rej('Error');
         }
 
@@ -79,12 +79,37 @@ const updatingArray = (data) => {
 }
 console.log(person)
 updatingArray({ name: 'ALi', age: 19 }).then(printingArray)
-.catch((err) => {
-    console.log(err)
-})
+    .catch((err) => {
+        console.log(err)
+    })
 
 let fetchData = fetch('https://jsonplaceholder.typicode.com/users').then((res) => {
     console.log(res.json())
-}).then((rej) =>{
+}).then((rej) => {
     console.log(rej)
 })
+
+
+function printString(string){
+    return new Promise((resolve, reject) => {
+      setTimeout(
+        () => {
+         console.log(string)
+         resolve()
+        }, 
+       Math.floor(Math.random() * 100) + 1
+      )
+    })
+  }
+
+
+  function printAll(){
+    printString("A")
+    .then(() => {
+      return printString("B")
+    })
+    .then(() => {
+      return printString("C")
+    })
+  }
+  printAll()
