@@ -2,8 +2,6 @@ function library() {
     this.http = new XMLHttpRequest();
 }
 
-
-
 // GET Request
 library.prototype.get = function (url, callback) {
 
@@ -18,11 +16,8 @@ library.prototype.get = function (url, callback) {
         }
     }
 
-
     this.http.send();
 }
-
-
 
 
 
